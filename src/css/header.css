@@ -6,6 +6,12 @@
     font-size: 90px;
 }
 
+@media (max-width: 700px) {
+    .banner h2 {
+        font-size: 70px;
+    }
+}
+
 .destacado {
     color: #1FC7C6;
 }
@@ -13,4 +19,11 @@
 
 .line {
     height: 4px;
+}
+
+
+.responsive {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

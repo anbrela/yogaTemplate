@@ -20,7 +20,7 @@ const Layout = ({ data }) => {
   return (
     <>
       <Header data={data} />
-      <section className='about pt-10 bg-pink-200 relative'>
+      <section className='about pt-10 bg-pink-200 relative' id="about">
         <div className=' hidden lg:flex transform -rotate-90 w-40 absolute top-0 left-0'>
           <img src={shapeAbout} alt='' />
         </div>
@@ -28,9 +28,9 @@ const Layout = ({ data }) => {
           <div className='w-3/6 flex justify-center'>
             <img className=' w-40 m-5 lg:m-0 lg:w-56 ' src={about} alt='' />
           </div>
-          <div className='w-3/6 m-5 lg:m-0'>
+          <div className='w-5/6 md:w-3/6 m-5 lg:m-0'>
             <span className='text-gray-700'>{data.siteDate}</span>
-            <h1 className='uppercase title-web font-black text-5xl'>{data.siteName}</h1>
+            <h1 className='uppercase title-web font-black text-3xl md:text-5xl'>{data.siteName}</h1>
             <p className='text-gray-700 text-justify'>{data.siteInfo}</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ const Layout = ({ data }) => {
             className='transition-all duration-300 ease-in-out delay-150' transform='rotate(-180 720 250)'></path>
         </svg>
       </section>
-      <section className='featured container mx-auto lg:flex'>
+      <section className='featured container mx-auto lg:flex' id="features">
 
         {/*POR QUE A MI NO ME FUNCIONA CON EL map(feature) => {} . SOLO SIN LAS LLAVES*/}
 
@@ -70,20 +70,20 @@ const Layout = ({ data }) => {
             className='transition-all duration-300 ease-in-out delay-150'></path>
         </svg>
       </section>
-      <section className='bg-pink-200 relative'>
-        <div className='absolute w-56 right-0 top-0'>
+      <section className='bg-pink-200 relative' id="services">
+        <div className='absolute hidden md:flex w-56 right-0 top-0'>
           <img src={shape2} alt='' />
         </div>
-        <div className='services container mx-auto w-3/6 mb-20'>
+        <div className='services container mx-auto w-5/6 md:w-3/6 mb-20'>
           <h2 className='font-black text-3xl text-gray-700 uppercase'>{data.servicesTitle}</h2>
           <p>{data.servicesDescription}</p>
         </div>
-        <div className='container mx-auto flex justify-center'>
+        <div className='container mx-auto flex flex-wrap justify-center'>
 
 
           {data.services.map((service) => (
 
-            <div className='item rounded-tr-2xl rounded-br-xl bg-blue-200 m-5' style={{backgroundImage: `url(${service1})`}} key={service.id} >
+            <div className='item rounded-tr-2xl rounded-br-xl bg-blue-200 m-5 shadow-lg' style={{backgroundImage: `url(${service1})`}} key={service.id} >
               <div className='h-full w-full flex flex-col justify-start p-3'>
                 <h2 className='font-bold uppercase text-white'>{service.name}</h2>
                 <p className='text-white'>{service.description}</p>
@@ -106,14 +106,14 @@ const Layout = ({ data }) => {
             className='transition-all duration-300 ease-in-out delay-150' transform='rotate(-180 720 200)'></path>
         </svg>
       </section>
-      <section className='pb-5'>
-        <div className='container mx-auto flex justify-center'>
-          <div className='w-3/6'>
+      <section className='pb-5' id="contact">
+        <div className='container mx-auto flex flex-col md:flex-row justify-center '>
+          <div className='w-5/6 mx-auto flex justify-center lg:w-3/6'>
             <img src={contact} alt='' />
 
           </div>
 
-          <div className=' contact w-3/6 flex flex-col items-center justify-center'>
+          <div className=' contact w-5/6 lg:w-3/6 mx-auto flex flex-col items-center justify-center mt-10 md:mt-0'>
             <h2 className='uppercase font-bold text-gray-700 text-5xl mb-5'>{data.contactTitle}</h2>
             <div>
               <ul>
