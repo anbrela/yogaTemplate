@@ -10,12 +10,12 @@ import shape2 from "../Images/shape2.svg";
 import contact from "../Images/contact.svg"
 
 
-const Layout = ({ children }) => {
+const Layout = ({ data }) => {
 
 
   return (
     <>
-      <Header />
+      <Header data={data} />
       <section className='about pt-10 bg-pink-200 relative'>
         <div className=' hidden lg:flex transform -rotate-90 w-40 absolute top-0 left-0'>
           <img src={shapeAbout} alt='' />
@@ -25,15 +25,9 @@ const Layout = ({ children }) => {
             <img className=' w-40 m-5 lg:m-0 lg:w-56 ' src={about} alt='' />
           </div>
           <div className='w-3/6 m-5 lg:m-0'>
-            <span className='text-gray-700'> Desde 2002</span>
-            <h1 className='uppercase title-web font-black text-5xl'>Kalm Theraphy</h1>
-            <p className='text-gray-700 text-justify'>Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-              archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-              cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y
-              los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino
-              que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al
-              original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian
-              pasajes de Lorem Ipsum</p>
+            <span className='text-gray-700'>{data.siteDate}</span>
+            <h1 className='uppercase title-web font-black text-5xl'>{data.siteName}</h1>
+            <p className='text-gray-700 text-justify'>{data.siteInfo}</p>
           </div>
         </div>
       </section>
@@ -47,43 +41,20 @@ const Layout = ({ children }) => {
         </svg>
       </section>
       <section className='featured container mx-auto lg:flex'>
-        <div className='flex flex-col justify-center items-center mb-5'>
-          <img className='w-32' src={featured1} alt='' />
-          <div className='w-10/12 m-4'>
-            <h3 className='font-bold uppercase text-lg'>Instructores Profesionales</h3>
-            <p className='text-justify'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-              in a piece of classical
-              Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-              Hampden-Sydney College</p>
+
+        {/*POR QUE A MI NO ME FUNCIONA CON EL map(feature) => {} . SOLO SIN LAS LLAVES*/}
+
+        {data.features.map((feature) =>
+          <div className='flex flex-col justify-center items-center mb-5' key={feature.id}>
+            <img className='w-32' src={featured1} alt='' />
+            <div className='w-10/12 m-4'>
+              <h3 className='font-bold uppercase text-lg'>{feature.name}</h3>
+              <p className='text-justify'>
+                {feature.description}
+              </p>
+            </div>
           </div>
-        </div>
-
-        <div className='flex flex-col justify-center items-center'>
-          <img className='w-32' src={featured2} alt='' />
-          <div className='w-10/12 m-4'>
-            <h3 className='font-bold uppercase text-lg'>Materiales Seguros</h3>
-            <p className='text-justify'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-              in a piece of classical
-              Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-              Hampden-Sydney College</p>
-          </div>
-
-        </div>
-
-        <div className='flex flex-col justify-center items-center'>
-          <img className='w-32' src={featured3} alt='' />
-          <div className='w-10/12 m-4'>
-            <h3 className='font-bold uppercase text-lg'>Clases Personales</h3>
-            <p className='text-justify'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-              in a piece of classical
-              Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-              Hampden-Sydney College</p>
-          </div>
-
-        </div>
-
-
-
+        )}
 
       </section>
       <section>
@@ -91,7 +62,7 @@ const Layout = ({ children }) => {
              className='transition duration-300 ease-in-out delay-150'>
           <path
             d='M 0,400 C 0,400 0,200 0,200 C 86.64285714285714,197 173.28571428571428,194 306,197 C 438.7142857142857,200 617.5,209 739,224 C 860.5,239 924.7142857142858,260 1032,257 C 1139.2857142857142,253.99999999999997 1289.642857142857,227 1440,200 C 1440,200 1440,400 1440,400 Z'
-            stroke='none' stroke-width='0' fill='#FED6E2'
+            stroke='none' strokeWidth='0' fill='#FED6E2'
             className='transition-all duration-300 ease-in-out delay-150'></path>
         </svg>
       </section>
@@ -174,7 +145,7 @@ const Layout = ({ children }) => {
                 <li className="flex justify-center">
                   <p className="m-2 text-xl text-gray-700">Whatsapp:</p>
                   <a className="m-2 text-xl" href="#">
-                    666666666
+                    {data.sitePhone}
                   </a>
                 </li>
 
