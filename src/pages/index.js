@@ -24,6 +24,12 @@ const Index = () => {
     siteProvince: 'A Coruña',
     siteCountry: 'España',
     timeTable: 'L-V: 10h 14h 18:30 21:30<br/>, Sábados 9-14h',
+    featuresTitle:"",
+    featuresDescription: "",
+    contactTitle: "hablemos",
+    contactDescription: "",
+    servicesTitle: "Renueva tu alma",
+    servicesDescription: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College",
     features: [
       {
         id: 'aaaa',
@@ -52,8 +58,8 @@ const Index = () => {
     ],
     services: [
       {
-        id: 'ñkljh',
-        name: 'Productos ecológicos',
+        id: '001',
+        name: 'Sesión zhen',
         description:
           'Lorem Ipsum productum is simply dummy text of the printing and typesetting industry.',
         price: 'Desde 30€',
@@ -61,8 +67,8 @@ const Index = () => {
         weight: 0
       },
       {
-        id: 'ñkljhñljh',
-        name: 'Revisiones semanales',
+        id: '002',
+        name: 'Sesión zhen',
         description:
           'Lorem Ipsum is revision simply dummy text of the printing and typesetting industry.',
         image: 'dog.svg',
@@ -70,8 +76,8 @@ const Index = () => {
         weight: 1
       },
       {
-        id: 'jñlkhlh yyhg',
-        name: 'Collares de salud',
+        id: '003',
+        name: 'Sesión zhen',
         description:
           'Lorem Ipsum colar is simply dummy text of the printing and typesetting industry.',
         image: 'dog.svg',
@@ -79,32 +85,15 @@ const Index = () => {
         weight: 2
       },
       {
-        id: 'ñkljjhllh',
-        name: 'Agenda de vacunas',
+        id: '004',
+        name: 'Sesión zhen',
         description:
           'Lorem Ipsum vacunae is simply dummy text of the printing and typesetting industry.',
         image: 'dog.svg',
         price: 'Desde 50€',
         weight: 3
       },
-      {
-        id: 'ñkljjh4llh',
-        name: 'Otra cosa',
-        description:
-          'Lorem Ipsum vacunae is simply dummy text of the printing and typesetting industry.',
-        image: 'dog.svg',
-        price: 'Desde 50€',
-        weight: 4
-      },
-      {
-        id: 'ñkljjh4llh',
-        name: 'Otra cosa',
-        description:
-          'Lorem Ipsum vacunae is simply dummy text of the printing and typesetting industry.',
-        image: 'dog.svg',
-        price: 'Desde 50€',
-        weight: 4
-      }
+
     ]
   };
 

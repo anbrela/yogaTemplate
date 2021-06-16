@@ -3,8 +3,7 @@
     color: #1FC7C6;
 }
 
-.item1 {
-    background-image: url("../components/Images/service1.svg");
+.item {
     background-size: contain;
     background-repeat: no-repeat;
     background-position-y: 20px;
@@ -12,31 +11,6 @@
     width: 200px;
 }
 
-
-.item2 {
-    background-image: url("../components/Images/service2.svg");
-    background-size: 210px;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-}
-
-.item3 {
-    background-image: url("../components/Images/service3.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-y: 10px;
-    width: 200px;
-}
-
-
-.item4 {
-    background-image: url("../components/Images/service4.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-}
 
 
 .contact a {
