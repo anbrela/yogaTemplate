@@ -5,7 +5,6 @@ import lottie from 'lottie-web';
 import animation from '../Images/yoga-animation.json';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import {AiOutlineClose} from "react-icons/ai";
-import responsive from "../Images/responsive.jpg";
 
 
 
@@ -76,11 +75,26 @@ const Header = ({ data }) => {
         <div className='text-2xl text-gray-700 lg:text-gray-700 text-2xl'>{data.siteName}</div>
         <div className='hidden lg:flex'>
           <ul className='flex items-center'>
-            <li className='list-none uppercase text-gray-700 m-2'>Inicio</li>
-            <li className='list-none uppercase text-gray-700 m-2'>Nosotros</li>
-            <li className='list-none uppercase text-gray-700 m-2'>Valores</li>
-            <li className='list-none uppercase text-gray-700 m-2'>Servicios</li>
-            <li className='list-none uppercase text-gray-700 m-2'>Contacto</li>
+            <li className='list-none uppercase text-gray-700 m-2'>
+              <a className="text-gray-800" href="/">Inicio</a>
+
+            </li>
+            <li className='list-none uppercase text-gray-700 m-2'>
+              <a className="text-gray-800" href="#about">Nosotros</a>
+
+            </li>
+            <li className='list-none uppercase text-gray-700 m-2'>
+              <a className="text-gray-800" href="#features">Valores</a>
+
+            </li>
+            <li className='list-none uppercase text-gray-700 m-2'>
+              <a className="text-gray-800" href="#services">Servicios</a>
+
+            </li>
+            <li className='list-none uppercase text-gray-700 m-2'>
+              <a className="text-gray-800" href="#contact">Contacto</a>
+
+            </li>
           </ul>
           <a className="flex items-center ml-5 text-gray-700 text-xl" href='#'>
 
