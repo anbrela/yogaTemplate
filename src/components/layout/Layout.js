@@ -5,10 +5,10 @@ import about from '../Images/about.svg';
 import featured1 from '../Images/featured1.svg';
 import featured2 from '../Images/featured2.svg';
 import featured3 from '../Images/featured3.svg';
-import service1 from "../Images/service1.svg"
-import service2 from "../Images/service2.svg"
-import service3 from "../Images/service3.svg"
-import service4 from "../Images/service4.svg"
+import service1 from '../Images/service1.svg';
+import service2 from '../Images/service2.svg';
+import service3 from '../Images/service3.svg';
+import service4 from '../Images/service4.svg';
 import shapeAbout from '../Images/shape-about.svg';
 import shape2 from '../Images/shape2.svg';
 import contact from '../Images/contact.svg';
@@ -16,11 +16,21 @@ import contact from '../Images/contact.svg';
 
 const Layout = ({ data }) => {
 
+  const backgroundImages = [
+    service1, service2, service3, service4
+  ]
+
+  const backgroundColors = [
+
+    "bg-pink-400", "bg-blue-300", "bg-red-400", "bg-green-200", "bg-yellow-200", "bg-purple-200"
+
+  ]
+
 
   return (
     <>
       <Header data={data} />
-      <section className='about pt-10 bg-pink-200 relative' id="about">
+      <section className='about pt-10 bg-pink-200 relative' id='about'>
         <div className=' hidden lg:flex transform -rotate-90 w-40 absolute top-0 left-0'>
           <img src={shapeAbout} alt='' />
         </div>
@@ -44,20 +54,23 @@ const Layout = ({ data }) => {
             className='transition-all duration-300 ease-in-out delay-150' transform='rotate(-180 720 250)'></path>
         </svg>
       </section>
-      <section className='featured container mx-auto lg:flex' id="features">
+      <section className='featured container mx-auto lg:flex' id='features'>
 
-        {/*POR QUE A MI NO ME FUNCIONA CON EL map(feature) => {} . SOLO SIN LAS LLAVES*/}
 
-        {data.features.map((feature) =>
-          <div className='flex flex-col justify-center items-center mb-5' key={feature.id}>
-            <img className='w-32' src={featured1} alt='' />
-            <div className='w-10/12 m-4'>
-              <h3 className='font-bold uppercase text-lg'>{feature.name}</h3>
-              <p className='text-justify'>
-                {feature.description}
-              </p>
-            </div>
-          </div>
+        {data.features.map((feature) => {
+
+            return (
+              <div className='flex flex-col justify-center items-center mb-5' key={feature.id}>
+                <img className='w-32' src={featured1} alt='' />
+                <div className='w-10/12 m-4'>
+                  <h3 className='font-bold uppercase text-lg'>{feature.name}</h3>
+                  <p className='text-justify'>
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            );
+          }
         )}
 
       </section>
@@ -70,7 +83,7 @@ const Layout = ({ data }) => {
             className='transition-all duration-300 ease-in-out delay-150'></path>
         </svg>
       </section>
-      <section className='bg-pink-200 relative' id="services">
+      <section className='bg-pink-200 relative' id='services'>
         <div className='absolute hidden md:flex w-56 right-0 top-0'>
           <img src={shape2} alt='' />
         </div>
@@ -81,18 +94,24 @@ const Layout = ({ data }) => {
         <div className='container mx-auto flex flex-wrap justify-center'>
 
 
-          {data.services.map((service) => (
+          {data.services.map((service, index) =>
+            (
 
-            <div className='item rounded-tr-2xl rounded-br-xl bg-blue-200 m-5 shadow-lg' style={{backgroundImage: `url(${service1})`}} key={service.id} >
-              <div className='h-full w-full flex flex-col justify-start p-3'>
-                <h2 className='font-bold uppercase text-white'>{service.name}</h2>
-                <p className='text-white'>{service.description}</p>
-                <span className='bg-white w-32 flex justify-center items-center p-1 mt-2 rounded-lg'>{service.price}</span>
+              <div className={`item rounded-tr-2xl rounded-br-xl m-5 shadow-lg ${backgroundColors[index]}`}
+                   style={index % 2 === 0 ? { backgroundImage: `url(${backgroundImages[index]})` } : {
+                     backgroundImage: `url(${backgroundImages[index]})`,
+                     backgroundSize: '240px',
+                     backgroundPosition: 'center'
+                   }} key={service.id}>
+                <div className={`h-full w-full flex flex-col ${index % 2 === 0 ? 'justify-end' : 'justify-start'} p-3`}>
+                  <h2 className='font-bold uppercase text-white'>{service.name}</h2>
+                  <p className='text-white'>{service.description}</p>
+                  <span
+                    className='bg-white w-32 flex justify-center items-center p-1 mt-2 rounded-lg'>{service.price}</span>
+                </div>
               </div>
-            </div>
 
-          ))}
-
+            ))}
 
 
         </div>
@@ -106,7 +125,7 @@ const Layout = ({ data }) => {
             className='transition-all duration-300 ease-in-out delay-150' transform='rotate(-180 720 200)'></path>
         </svg>
       </section>
-      <section className='pb-5' id="contact">
+      <section className='pb-5' id='contact'>
         <div className='container mx-auto flex flex-col md:flex-row justify-center '>
           <div className='w-5/6 mx-auto flex justify-center lg:w-3/6'>
             <img src={contact} alt='' />
